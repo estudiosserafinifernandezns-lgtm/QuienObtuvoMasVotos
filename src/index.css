@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #f8f9fc;
+    --color-surface: #ffffff;
+    --color-surface-2: #f1f3f9;
+    --color-ink: #1a1a2e;
+    --color-ink-light: #4a4a6a;
+    --color-primary: #6c5ce7;
+    --color-accent: #00b894;
+    --color-fun: #fd79a8;
+    --color-warn: #fdcb6e;
+    --color-success: #00b894;
+    --color-error: #e74c3c;
+    --color-border: #e0e4f0;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-fun {
+    font-family: 'Fredoka', system-ui, sans-serif;
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-slide-out-left {
+    animation: slideOutLeft 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-slide-from-right-to-left {
+    animation: slideFromRightToLeft 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  .animate-fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+  }
+  .animate-pop {
+    animation: pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .animate-shake {
+    animation: shake 0.4s ease-in-out forwards;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .animate-flash-green {
+    animation: flashGreen 0.5s ease-out forwards;
+  }
+  .animate-flash-red {
+    animation: flashRed 0.5s ease-out forwards;
+  }
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out forwards;
+  }
+  .animate-bounce-in {
+    animation: bounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+@keyframes slideFromRightToLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes flashGreen {
+  0% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4); }
+  50% { box-shadow: 0 0 30px 8px rgba(0, 184, 148, 0.15); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); }
+}
+@keyframes flashRed {
+  0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+  50% { box-shadow: 0 0 30px 8px rgba(231, 76, 60, 0.15); }
+  100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.streak-pill {
+  background: linear-gradient(135deg, #fff5e6, #ffe0c2);
+  border: 2px solid #fdcb6e;
+}
+
+.btn-fun-more {
+  background: linear-gradient(135deg, #00b894, #00cec9);
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 0 #00896f;
+}
+.btn-fun-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #00896f;
+}
+.btn-fun-more:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #00896f;
+}
+
+.btn-fun-less {
+  background: linear-gradient(135deg, #e74c3c, #ff6b6b);
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 0 #c0392b;
+}
+.btn-fun-less:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #c0392b;
+}
+.btn-fun-less:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #c0392b;
+}
+
+.info-pill {
+  background: #f1f3f9;
+  border: 2px solid #e0e4f0;
+}
